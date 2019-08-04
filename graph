@@ -2,7 +2,7 @@
 # see http://slackology.net/wxnotes.html for more info
 
 TD="data"
-BASE_DIR="/home/ghz/wx/particle"
+BASE_DIR="/home/ghz/particle_weather"
 DATA_DIR="$BASE_DIR/data"
 PLOT_DIR="$BASE_DIR/plots"
 LOCK="$BASE_DIR/LOCK.particle"
