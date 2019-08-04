@@ -73,4 +73,6 @@ $BASE_DIR/gen_index
 
 gnuplot -e "OF='$OF';DAF='$DA_OF';MAF='$MA_OF'" $BASE_DIR/particle_specs.gnuplot
 
+rsync -e "ssh -q" --timeout=60 -ur $BASE_DIR/* wx5@darkdata.org:/wx5/ 2>/dev/null
+
 rm $LOCK
