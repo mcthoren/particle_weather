@@ -1,9 +1,9 @@
-set xtics
+set xtics rotate by 30 offset -5.5, -2.2
 set y2tics
 set key outside below
-set xlabel "Time (UTC)" offset 0.0, -1.0
+set xlabel "Time (UTC)" offset 0.0, -1.6
 set xdata time
-set format x "%m/%d\n%H:%M"
+set format x "%F\n%TZ"
 set timefmt "%Y%m%d%H%M%S"
 set grid
 set ylabel "nGy/h"
@@ -39,8 +39,8 @@ plot OF.".24.avg" using 1:(($2*1000/108)) title '16 pt Running Average Dose Rate
 OF.".24.avg.64" using 1:(($2*1000/108)) title '64 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#d00000"
 
 set title "Radioactivity: Daily averages."
-set xlabel "Date (yyyy/mm, UTC)" offset 0.0, -1.0
-set format x "%Y/%m" 
+set xlabel "Date (UTC)" offset 0.0, -1.6
+set format x "%F"
 set output 'particle_cpm_DA.png'
 set xtics auto
 set mxtics 2
@@ -55,10 +55,10 @@ plot MAF using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with
 set title "Radioactivity: Daily averages."
 set timefmt "%Y%m%d%H%M%S"
 set grid nomxtics
-set xtics 172800
+set xtics 172800 rotate by 30 offset -6.4, -2.2
 set mxtics 2
 set title "Radioactivity: Daily averages for the last 45 days."
-set xlabel "Date (mm/dd, UTC)" offset 0.0, -1.0
-set format x "%m/%d"
+set xlabel "Date (UTC)" offset 0.0, -1.6
+set format x "%F"
 set output 'particle_cpm_DA.45.png'
 plot DAF.".45" using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
