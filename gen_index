@@ -2,6 +2,7 @@
 BASE_DIR="/home/ghz/particle_weather"
 DATA_DIR="$BASE_DIR/data"
 OUT_FILE="$BASE_DIR/plots/particles.html"
+DY=`date +%Y`
 DATE=`date +%FT%TZ`
 TDATE=`date +%Y%m%d`
 
@@ -26,7 +27,7 @@ END="</table>
 <br> <br>
 </body> </html>"
 
-LASTLINE=` cat $DATA_DIR/data.$TDATE |tail -1`
+LASTLINE=` cat $DATA_DIR/$DY/data.$TDATE |tail -1`
 CPM=`echo $LASTLINE |awk '{printf("%.2f", $2*1000/108)}'`
 
 LASTLINEAVG=` cat $DATA_DIR/data.8.avg |tail -1`

@@ -29,6 +29,8 @@ cd $PLOT_DIR || exit 1
 touch $LOCK
 
 DY=`date +%Y`
+YDY=`date -d "-1 day" +%Y`
+YYDY=`date -d "-2 day" +%Y`
 DATE=`date +%Y%m%d`
 DATE8H=`date -d "-8 hours" +%Y%m%d%H`
 YDATE=`date -d "-1 day" +%Y%m%d`
@@ -39,16 +41,16 @@ YMDATE=`date -d "-1 month" +%Y%m`
 PAT="^2([0-9]{13}) [0-9]*\.[0-9]* cpm$"
 PAT1="^$YMDATE([0-9]{8}) [0-9]*\.[0-9]* cpm$"
 
-TDS0="cat $DATA_DIR/data.$YYDATE $DATA_DIR/data.$YDATE $DATA_DIR/data.$DATE | egrep -a \"$PAT\""
-TDS1="cat $DATA_DIR/data.$YDATE $DATA_DIR/data.$DATE | egrep -a \"$PAT\""
-TDS3="cat $DATA_DIR/data.$YMDATE* | egrep -a \"$PAT1\""
+TDS0="cat $DATA_DIR/$YYDY/data.$YYDATE $DATA_DIR/$YDY/data.$YDATE $DATA_DIR/$DY/data.$DATE | egrep -a \"$PAT\""
+TDS1="cat $DATA_DIR/$YDY/data.$YDATE $DATA_DIR/$DY/data.$DATE | egrep -a \"$PAT\""
+TDS3="cat $DATA_DIR/$YDY/data.$YMDATE* | egrep -a \"$PAT1\""
 
 TD_DUMP0="eval $TDS0"
 TD_DUMP1="eval $TDS1"
 TD_DUMP3="eval $TDS3"
 
 if [ -e $FLAG ]; then
-	(echo "$YDATE"; cat $DATA_DIR/data.$YDATE |$DAY_AVG) | paste - - >> $DA_OF
+	(echo "$YDATE"; cat $DATA_DIR/$YDY/data.$YDATE |$DAY_AVG) | paste - - >> $DA_OF
 	rm $FLAG
 fi
 	
