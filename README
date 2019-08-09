@@ -1,2 +1,6 @@
-this is the begining of breaking out the particle weather code into its own thing,
-as a result of updating the normal weather to simpler cheaper raspberry pi setups.
+this code collects and graphs data from a geiger-counter hooked up to a schmidt trigger hooked up to a raspberry pi gpio pin.
+
+this code can be found in the following places:
+	https://github.com/mcthoren/particle_weather	<--code
+	https://wx5.slackology.net/plots/particles.html	<--page
+	https://wx5.slackology.net/			<--code, page, plots, data
