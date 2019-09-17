@@ -6,8 +6,7 @@ this code can be found in the following places:
 	https://wx5.slackology.net/plots/particles.html	<--page
 	https://wx5.slackology.net/			<--code, page, plots, data
 
-data for the LND 712 can be found here, it's the closest current tube to the
-711, which is what's actually being used in this project.
+specs on the tube used in this project (LND 712) can be found here:
 https://www.lndinc.com/products/geiger-mueller-tubes/712/
 
 * To make the numbers on the particle graphs more meaningful to more people,
