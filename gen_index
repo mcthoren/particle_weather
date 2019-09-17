@@ -7,9 +7,9 @@ DATE=`date +%FT%TZ`
 TDATE=`date +%Y%m%d`
 
 TOP="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
-<html> <head> <title> Particle Weather </title> </head> 
+<html> <head> <title> Particle Weather from a balcony in Augsburg, Germany</title> </head>
 <body  bgcolor=\"#000000\" text=\"#206cff\" link=\"#0099ff\" vlink=\"#00ffff\"> 
-<center> <h1>Background Radiation.</h1>
+<center> <h1>Background Radiation from Augsburg, Germany</h1>
 <a href="http://slackology.net/wxnotes.html#pw">More info on the weather notes page.</a><br>
 <br> Current Conditions (updates every ~60s):
 <table borders>"
