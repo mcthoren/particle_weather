@@ -2,15 +2,15 @@ this code collects and graphs data from a geiger-counter hooked up to a schmidt
 trigger hooked up to a raspberry pi gpio pin.
 
 this code can be found in the following places:
-	https://github.com/mcthoren/particle_weather	<--code
-	https://wx5.slackology.net/plots/particles.html	<--page
-	https://wx5.slackology.net/			<--code, page, plots, data
+* https://github.com/mcthoren/particle_weather	<--code
+* https://wx5.slackology.net/plots/particles.html	<--page
+* https://wx5.slackology.net/			<--code, page, plots, data
 
 specs on the tube used in this project (LND 712) can be found here:
-	https://www.lndinc.com/products/geiger-mueller-tubes/712/
+* https://www.lndinc.com/products/geiger-mueller-tubes/712/
 
 the german government also publishes measured radioactivity here:
-	https://odlinfo.bfs.de/DE/index.html
+* https://odlinfo.bfs.de/DE/index.html
 
 * To make the numbers on the particle graphs more meaningful to more people,
 we've started displaying our data in nGy/h instead of cpm. The datasheet for
