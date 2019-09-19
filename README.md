@@ -12,6 +12,7 @@ specs on the tube used in this project (LND 712) can be found here:
 the german government also publishes measured radioactivity here:
 * https://odlinfo.bfs.de/DE/index.html
 
+notes:
 * To make the numbers on the particle graphs more meaningful to more people,
 we've started displaying our data in nGy/h instead of cpm. The datasheet for
 the LND 712 (linked above) specifies "Gamma sensitivity Co60 (CPS/MR/HR): 18".
