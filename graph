@@ -9,7 +9,10 @@ LOCK="$BASE_DIR/LOCK.particle"
 AVG_FILTER=$BASE_DIR/box_avg_filter
 AVG_F_64=$BASE_DIR/box_avg_f_64
 DAY_AVG=$BASE_DIR/day_avg
+# set some upper bounds on how many points to pump into a graph/file
 NSAMP=4000
+LIM_8=500
+LIM_24=1500
 OF="$DATA_DIR/$TD"
 DA_OF="$DATA_DIR/data.day_avg"
 MA_OF="$DATA_DIR/data.month_avg"
@@ -63,15 +66,15 @@ if [ -e $FLAG_MO ]; then
 	rm $FLAG_MO
 fi
 	
-$TD_DUMP0 | grep -A $NSAMP $YDATEH > $OF.24 || $TD_DUMP0 > $OF.24
+$TD_DUMP0 | grep -A $NSAMP $YDATEH > $OF.24 || $TD_DUMP0 | tail -$LIM_24 > $OF.24
 
-$TD_DUMP0 | $AVG_FILTER | grep -A $NSAMP $YDATEH > $OF.24.avg || $TD_DUMP0 | $AVG_FILTER > $OF.24.avg
-$TD_DUMP0 | $AVG_F_64 | grep -A $NSAMP $YDATEH > $OF.24.avg.64 || $TD_DUMP0 | $AVG_F_64 > $OF.24.avg.64
+$TD_DUMP0 | $AVG_FILTER | grep -A $NSAMP $YDATEH > $OF.24.avg || $TD_DUMP0 | tail -$LIM_24 | $AVG_FILTER > $OF.24.avg
+$TD_DUMP0 | $AVG_F_64 | grep -A $NSAMP $YDATEH > $OF.24.avg.64 || $TD_DUMP0 | tail -$LIM_24 | $AVG_F_64 > $OF.24.avg.64
 
-$TD_DUMP1 | grep -A $NSAMP $DATE8H > $OF.8 || $TD_DUMP1 > $OF.8
+$TD_DUMP1 | grep -A $NSAMP $DATE8H > $OF.8 || $TD_DUMP1 | tail -$LIM_8 > $OF.8
 
-$TD_DUMP1 | $AVG_FILTER | grep -A $NSAMP $DATE8H > $OF.8.avg || $TD_DUMP1 | $AVG_FILTER > $OF.8.avg
-$TD_DUMP1 | $AVG_F_64 | grep -A $NSAMP $DATE8H > $OF.8.avg.64 || $TD_DUMP1 | $AVG_F_64 > $OF.8.avg.64
+$TD_DUMP1 | $AVG_FILTER | grep -A $NSAMP $DATE8H > $OF.8.avg || $TD_DUMP1 | tail -$LIM_8  | $AVG_FILTER > $OF.8.avg
+$TD_DUMP1 | $AVG_F_64 | grep -A $NSAMP $DATE8H > $OF.8.avg.64 || $TD_DUMP1 | tail -$LIM_8 | $AVG_F_64 > $OF.8.avg.64
 
 cat $DA_OF |tail -n 45 > $DA_OF.45
 
