@@ -1,4 +1,4 @@
-set xtics rotate by 30 offset -5.5, -2.2
+set xtics rotate by 30 offset -5.9, -2.2
 set y2tics
 set key outside below
 set xlabel "Time (UTC)" offset 0.0, -1.6
@@ -43,7 +43,7 @@ set xlabel "Date (UTC)" offset 0.0, -1.6
 set format x "%F"
 set output 'particle_cpm_DA.png'
 set xrange ["20070101000000":]
-set xtics auto
+set xtics auto rotate by 30 offset -6.8, -2.2
 set mxtics 2
 set grid mxtics
 plot DAF using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with histeps linecolor rgb "#0088FF"
@@ -56,7 +56,7 @@ unset xrange
 set title "Radioactivity: Daily averages."
 set timefmt "%Y%m%d%H%M%S"
 set grid nomxtics
-set xtics 172800 rotate by 30 offset -6.4, -2.2
+set xtics 172800 rotate by 30 offset -6.8, -2.2
 set mxtics 2
 set title "Radioactivity: Daily averages for the last 45 days."
 set xlabel "Date (UTC)" offset 0.0, -1.6
