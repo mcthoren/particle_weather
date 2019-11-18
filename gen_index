@@ -7,11 +7,18 @@ DATE=`date +%FT%TZ`
 TDATE=`date +%Y%m%d`
 
 TOP="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
-<html> <head> <title> Particle Weather from a balcony in Augsburg, Germany</title> </head>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="60">
+<title> Particle Weather from a balcony in Augsburg, Germany</title>
+</head>
 <body  bgcolor=\"#000000\" text=\"#206cff\" link=\"#0099ff\" vlink=\"#00ffff\"> 
-<center> <h1>Background Radiation from Augsburg, Germany</h1>
+<center>
+<h1>Background Radiation from Augsburg, Germany</h1>
 See <a href="https://github.com/mcthoren/particle_weather/">here</a> for more info.<br>
-<br> Current Conditions (updates every ~60s):
+<br>
+Current Conditions (updates every ~60s):
 <table borders>"
 
 END="</table>
@@ -36,11 +43,11 @@ AVG_CPM=`echo $LASTLINEAVG |awk '{printf("%.2f", $2*1000/108)}'`
 LASTLINEAVG=` cat $DATA_DIR/data.8.avg.64 |tail -1`
 AVG_CPM64=`echo $LASTLINEAVG |awk '{printf("%.2f", $2*1000/108)}'`
 
-echo $TOP >$OUT_FILE
+echo "$TOP" >$OUT_FILE
 
 echo "<tr><td>Activity for Last ~1m:</td> <td>$CPM nGy/h</td></tr>" >>$OUT_FILE
 echo "<tr><td>Average for Last ~16m:</td> <td>$AVG_CPM nGy/h</td></tr>" >>$OUT_FILE
 echo "<tr><td>Average for Last ~64m:</td> <td>$AVG_CPM64 nGy/h</td></tr>" >>$OUT_FILE
 echo "<tr><td>Last Update:</td> <td>$DATE</td></tr>" >>$OUT_FILE
 
-echo $END >>$OUT_FILE
+echo "$END" >>$OUT_FILE
