@@ -1,4 +1,4 @@
-This code collects and graphs data from a Geiger-counter hooked up to a Schmidt
+This code collects and graphs data from a Geiger counter hooked up to a Schmitt
 trigger hooked up to a raspberry pi GPIO pin.
 
 this code can be found in the following places:
