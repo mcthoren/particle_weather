@@ -1,7 +1,7 @@
 This code collects and graphs data from a Geiger counter hooked up to a Schmitt
-trigger hooked up to a raspberry pi GPIO pin.
+trigger hooked up to a Raspberry Pi GPIO pin.
 
-this code can be found in the following places:
+This code can be found in the following places:
 * https://github.com/mcthoren/particle_weather		<--code
 * https://wx5.slackology.net/plots/particles.html	<--page
 * https://wx5.slackology.net/				<--code, page, plots, data
