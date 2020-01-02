@@ -39,7 +39,7 @@ gamma tube, and my calibration is only against a gamma source.
 * This station has been moved a number of times over the years. As environmental
 background radiation is different everywhere, these moves are visible in the
 data.
-.. 2007-01-06: First set up in Seattle, Washington.
-.. 2007-03-06: Moved to it's final location at the first Apartment.
-.. 2011-07-05: Moved to second Seattle Apt, which was made of brick, which was
+	* 2007-01-06: First set up in Seattle, Washington.
+	* 2007-03-06: Moved to it's final location at the first Apartment.
+	* 2011-07-05: Moved to second Seattle Apt, which was made of brick, which was
 visible in the data.
