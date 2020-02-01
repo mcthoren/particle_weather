@@ -19,7 +19,7 @@ set term png size 2000, 512 font ",10"
 set title "Radioactivity over the last \\~8 hours."
 set xtics 3600
 set output 'particle_cpm_8.png'
-plot OF.".8" using 1:(($2*1000/108)) title 'Dose Rate (nGy/h)' with lines linecolor rgb "#00d000",\
+plot OF.".8" using 1:(($2*1000/108)) title 'Dose Rate (nGy/h)' with points linecolor rgb "#00d000",\
 OF.".8.avg" using 1:(($2*1000/108)) title '16 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#0000d0",\
 OF.".8.avg.64" using 1:(($2*1000/108)) title '64 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#d00000"
 
@@ -30,7 +30,7 @@ OF.".8.avg.64" using 1:(($2*1000/108)) title '64 pt Running Average Dose Rate (n
 set title "Radioactivity over the last \\~24 hours."
 set xtics 3600
 set output 'particle_cpm_24.png'
-plot OF.".24" using 1:(($2*1000/108)) title 'Dose Rate (nGy/h)' with lines linecolor rgb "#00d000",\
+plot OF.".24" using 1:(($2*1000/108)) title 'Dose Rate (nGy/h)' with points linecolor rgb "#00d000",\
 OF.".24.avg" using 1:(($2*1000/108)) title '16 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#0000d0",\
 OF.".24" using 1:(($2*1000/108)) title 'Bezier Smoothed Dose Rate (nGy/h)' with lines linecolor rgb "#d00000" smooth bezier
 
