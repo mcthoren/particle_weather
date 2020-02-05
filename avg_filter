@@ -22,5 +22,5 @@ for ($j = $numpts; $j < $i; $j++) {
 		$sum += $dat[$k][1];
 	}
 
-	printf "%d %.2f\n", $dat[$j][0], $sum/$numpts;
+	printf "%d %.2f\n", $dat[$j][0], $sum / $numpts;
 }
