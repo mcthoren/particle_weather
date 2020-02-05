@@ -1,16 +1,17 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -T
 
-$num=0;
-$tsum=0;
+use warnings;
+use strict;
 
-while(<>){
-	chomp;
-	($x, $y)=split;
-	if($y ne "??"){
-	   $num++;
-	   $tsum+=$y;
+my ($num, $tsum) = (0, 0);
+
+while (<>) {
+	my ($x, $y) = split;
+	if ($y ne "??") {
+		$num++;
+		$tsum += $y;
 	}
 }
 
-$avg=$tsum / $num;
+my $avg = $tsum / $num;
 printf "%.2f\n", $avg;
