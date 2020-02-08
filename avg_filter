@@ -8,6 +8,7 @@ my $numpts = 16;
 my @dat;
 
 while (<>) {
+	chomp;
 	my ($x, $y) = split;
 	if ($y ne "??") {
 		push @dat, [ $x, $y ];
