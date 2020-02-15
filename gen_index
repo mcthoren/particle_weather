@@ -6,20 +6,22 @@ DY=`date +%Y`
 DATE=`date +%FT%TZ`
 TDATE=`date +%Y%m%d`
 
-TOP="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
+TOP='<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="60">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="dd.css">
 <title> Particle Weather from a balcony in Augsburg, Germany</title>
 </head>
-<body  bgcolor=\"#000000\" text=\"#206cff\" link=\"#0099ff\" vlink=\"#00ffff\"> 
+<body>
 <center>
 <h1>Background Radiation from Augsburg, Germany</h1>
 See <a href="https://github.com/mcthoren/particle_weather/">here</a> for more info.<br>
 <br>
 Current Conditions (updates every ~60s):
-<table borders>"
+<table borders>'
 
 END="</table>
 <br>
