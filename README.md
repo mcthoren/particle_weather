@@ -53,3 +53,4 @@ data and described below.
 	* 2018-11-20: Tore everything done and moved once more. NO DATA until...
 	* 2018-12-14: Got everything set back up on the balcony of an apt in Augsburg, Germany - a small town in Bavaria.
 	* 2019-03-31: Moved the Geiger counter to the bottom shelf of a plant thing on the balcony.
+	* 2020-09-21: Stacked the Geiger counter box on top of the solar power equipment box.
