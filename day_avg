@@ -2,8 +2,13 @@
 
 use warnings;
 use strict;
+use utf8;
+use open qw(:std :utf8);
+use Encode qw(encode decode);
 
 my ($num, $tsum) = (0, 0);
+
+@ARGV = map { decode("UTF-8", $_) } @ARGV;
 
 while (<>) {
 	chomp;

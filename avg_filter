@@ -2,10 +2,15 @@
 
 use warnings;
 use strict;
+use utf8;
+use open qw(:std :utf8);
+use Encode qw(encode decode);
 
 my ($i, $j, $k, $sum) = (0, 0, 0, 0);
 my $numpts = 16;
 my @dat;
+
+@ARGV = map { decode("UTF-8", $_) } @ARGV;
 
 while (<>) {
 	chomp;
