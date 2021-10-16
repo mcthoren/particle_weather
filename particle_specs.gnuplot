@@ -1,11 +1,15 @@
-set xtics rotate by 30 offset -5.9, -2.2
 set y2tics
 set mytics
 set key outside below
-set xlabel "Time (UTC)" offset 0.0, -1.6
 set xdata time
+set xlabel "Time (UTC)" offset 0.0, -1.6
 set format x "%F\n%TZ"
 set timefmt "%Y-%m-%dT%H:%M:%SZ"
+set grid
+set xtics 7200 rotate by 30 offset -5.9, -2.2
+set mxtics
+set grid mxtics
+# set xrange [:] noextend
 set grid
 set ylabel "nGy/h"
 set y2label "nGy/h"
