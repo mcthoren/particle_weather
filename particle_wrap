@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# meant to be called from cron every minute or so
+
+# /home/ghz/repos/particle_weather
+LOCK='/home/ghz/repos/particle_weather/part_wx.lock'
+WT_DIR='/home/ghz/repos/weather_tools'
+DAT_DIR='/home/ghz/repos/particle_weather/data'
+BASE_DIR='/home/ghz/repos/particle_weather'
+
+[ -e "${LOCK}" ] && {
+	echo "$0: lock exists" | logger
+		exit 1
+}
+
+PAT="^2([0-9]{13}) [0-9]*\.[0-9]* cpm$"
+# PAT1="^$YMDATE([0-9]{8}) [0-9]*\.[0-9]* cpm$"
+
+# lock is also checked for and deleted on boot, in case of a crash
+touch "${LOCK}"
+
+"${WT_DIR}/grab_48h" "${DAT_DIR}" particle.dat
+
+# grep -aP "$G_PAT" "${DAT_DIR}/9dof_raw.dat.2-3_day" > "${DAT_DIR}/gyro.dat.2-3_day"
+
+cd "${BASE_DIR}" || exit 1
+# gnuplot "${BASE_DIR}/particle_specs.gnuplot"
+
+sync
+
+# /usr/bin/rsync -ur --timeout=50 --exclude='.git' /home/ghz/9dof/ "${BASE_DIR}/" \
+# wx_0x0a_sync:/wx_0x0a/ # 2> /dev/null
+
+rm "${LOCK}"
