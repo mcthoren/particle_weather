@@ -24,7 +24,7 @@ touch "${LOCK}"
 # grep -aP "$G_PAT" "${DAT_DIR}/9dof_raw.dat.2-3_day" > "${DAT_DIR}/gyro.dat.2-3_day"
 
 cd "${BASE_DIR}" || exit 1
-# gnuplot "${BASE_DIR}/particle_specs.gnuplot"
+gnuplot "${BASE_DIR}/particle_specs.gnuplot"
 
 sync
 
