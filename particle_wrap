@@ -37,7 +37,9 @@ if [ -e $FLAG ]; then
 fi
 
 if [ -e $FLAG_MO ]; then
-	# do stuff here
+	YDY="$(date +%Y)"
+	YDM="$(date +%m)"
+	(echo "${YDY}-${YDM}"; cat ${DAT_DIR}/${YDY}/particle.dat.${YDY}-${YDM}-* | $DAY_AVG) | paste - - >> $MA_OF
 	rm $FLAG_MO
 fi
 

@@ -23,6 +23,7 @@ set term pngcairo size 2000, 512 font ",10"
 
 p_dat='/home/ghz/repos/particle_weather/data/particle.dat.2-3_day'
 day_dat='/home/ghz/repos/particle_weather/data/particle.dat.day_avg'
+mon_dat='/home/ghz/repos/particle_weather/data/particle.dat.month_avg'
 plot_d='/home/ghz/repos/particle_weather/plots'
 
 set title "Radioactivity over the last \\~48 hours."
@@ -67,7 +68,8 @@ set format x "%F"
 set output plot_d.'/particle_cpm_da.45.png'
 plot day_dat.".45" using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
 
-# set output 'particle_cpm_MA.png'
-# set timefmt "%Y%m"
-# set title "Radioactivity: Monthly averages."
-# plot MAF using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
+set xrange [:] noextend
+set timefmt "%Y-%m"
+set title "Radioactivity: Monthly averages."
+set output plot_d.'/particle_cpm_month_avg.png'
+plot mon_dat using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
