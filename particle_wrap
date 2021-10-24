@@ -32,10 +32,14 @@ if [ -e $FLAG ]; then
 	YDY="$(date +%Y)"
 	YDATE="$(date +%F)"
 	(echo "$YDATE"; cat $DAT_DIR/$YDY/particle.dat.$YDATE | $DAY_AVG) | paste - - >> $DA_OF
+	tail -45 "${DA_OF}" > "${DA_OF}.45"
 	rm $FLAG
 fi
 
-# grep -aP "$G_PAT" "${DAT_DIR}/9dof_raw.dat.2-3_day" > "${DAT_DIR}/gyro.dat.2-3_day"
+if [ -e $FLAG_MO ]; then
+	# do stuff here
+	rm $FLAG_MO
+fi
 
 cd "${BASE_DIR}" || exit 1
 gnuplot "${BASE_DIR}/particle_specs.gnuplot"
