@@ -1,3 +1,5 @@
 data/
 plots/
-LOCK.particle
+part_wx.lock
+CRONFLAG
+CRONFLAG_MO
