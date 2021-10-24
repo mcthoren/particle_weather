@@ -22,6 +22,7 @@ set term pngcairo size 2000, 512 font ",10"
 # not the typical isotope that we measure here in my apt.
 
 p_dat='/home/ghz/repos/particle_weather/data/particle.dat.2-3_day'
+day_dat='/home/ghz/repos/particle_weather/data/particle.dat.day_avg'
 plot_d='/home/ghz/repos/particle_weather/plots'
 
 set title "Radioactivity over the last \\~48 hours."
@@ -44,15 +45,15 @@ p_dat using 1:(($2*1000/108)) title 'Dose Rate bezier smoothed' with lines lw 2 
 # plot OF.".24.avg" using 1:(($2*1000/108)) title '16 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#0000d0",\
 # OF.".24.avg.64" using 1:(($2*1000/108)) title '64 pt Running Average Dose Rate (nGy/h)' with lines linecolor rgb "#d00000"
 
-# set title "Radioactivity: Daily averages."
-# set xlabel "Date (UTC)" offset 0.0, -1.6
-# set format x "%F"
-# set output 'particle_cpm_DA.png'
+set title "Radioactivity: Daily averages."
+set xlabel "Date (UTC)" offset 0.0, -1.6
+set format x "%F"
+set output plot_d."/particle_cpm_da.png"
 # set xrange ["20070101000000":]
-# set xtics auto rotate by 30 offset -6.8, -2.2
-# set mxtics 2
-# set grid mxtics
-# plot DAF using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with histeps linecolor rgb "#0088FF"
+set xtics auto rotate by 30 offset -6.8, -2.2
+set mxtics 2
+set grid mxtics
+plot day_dat using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with histeps linecolor rgb "#0088FF"
 
 # set output 'particle_cpm_MA.png'
 # set timefmt "%Y%m"
