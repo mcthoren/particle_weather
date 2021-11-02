@@ -38,14 +38,17 @@ set xrange [:] noextend
 set xtics auto rotate by 30 offset -6.8, -2.2
 set mxtics 2
 set grid mxtics
-plot day_dat using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with histeps linecolor rgb "#0088FF"
+set style fill solid 0.50 noborder
+plot day_dat using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#00aa00"
 
 set title "Radioactivity: Daily averages for the last 45 days."
 set format x "%F"
+set style fill solid 0.50 border
 set output plot_d.'/particle_cpm_da.45.png'
-plot day_dat.".45" using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
+plot day_dat.".45" using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#0000ff"
 
 set timefmt "%Y-%m"
 set title "Radioactivity: Monthly averages."
+set style fill solid 0.50 border
 set output plot_d.'/particle_cpm_month_avg.png'
-plot mon_dat using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#ff0000"
+plot mon_dat using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#00c0c0"
