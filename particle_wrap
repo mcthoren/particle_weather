@@ -50,6 +50,6 @@ gnuplot "${BASE_DIR}/particle_specs.gnuplot"
 
 sync
 
-/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx0_sync:/wx0/dev/ # 2> /dev/null
+/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx0_sync:/wx0/dev/ 2> /dev/null
 
 rm "${LOCK}"
