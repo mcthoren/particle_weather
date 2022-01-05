@@ -1,7 +1,7 @@
 #!/usr/bin/python3 -u
 
 import RPi.GPIO as GPIO
-import time, datetime, sys
+import time, sys
 
 sys.path.append('/home/ghz/wxlib')
 import wxlib as wx
@@ -22,7 +22,7 @@ def trigger_count(channel):
 	time2 = time1 - time0
 
 	if(time2 > 60):
-		ts =  datetime.datetime.fromtimestamp(time1).strftime("%Y%m%d%H%M%S")
+		ts = time.strftime("%Y%m%d%H%M%S", time.gmtime(float(time1)))
 		dat_string = "%s %.2f cpm\n" % (ts, count/(60/time2))
 		wx.write_out_dat_stamp(ts, 'data', dat_string, wx_dir)
 		count = 0
