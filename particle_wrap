@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# meant to be called from cron every minute or so
+
+# /home/ghz/repos/particle_weather
+LOCK='/home/ghz/repos/particle_weather/part_wx.lock'
+WT_DIR='/home/ghz/repos/weather_tools'
+DAT_DIR='/home/ghz/repos/particle_weather/data'
+BASE_DIR='/home/ghz/repos/particle_weather'
+DAY_AVG="$BASE_DIR/day_avg"
+DA_OF="$DAT_DIR/particle.dat.day_avg"
+MA_OF="$DAT_DIR/particle.dat.month_avg"
+
+#from cronjob
+FLAG="$BASE_DIR/CRONFLAG"
+FLAG_MO="$BASE_DIR/CRONFLAG_MO"
+
+[ -e "${LOCK}" ] && {
+	echo "$0: lock exists" | logger
+		exit 1
+}
+
+PAT="^2([0-9]{13}) [0-9]*\.[0-9]* cpm$"
+# PAT1="^$YMDATE([0-9]{8}) [0-9]*\.[0-9]* cpm$"
+
+# lock is also checked for and deleted on boot, in case of a crash
+touch "${LOCK}"
+
+"${WT_DIR}/grab_48h" "${DAT_DIR}" particle.dat
+
+if [ -e $FLAG ]; then
+	# flag comes from cronjob at 23:59
+	YDY="$(date +%Y)"
+	YDATE="$(date +%F)"
+	(echo "$YDATE"; cat $DAT_DIR/$YDY/particle.dat.$YDATE | $DAY_AVG) | paste - - >> $DA_OF
+	tail -45 "${DA_OF}" > "${DA_OF}.45"
+	rm $FLAG
+fi
+
+if [ -e $FLAG_MO ]; then
+	# flag comes from cronjob for the first of the month
+	YDY="$(date -d "-1 month" +%Y)" # XXX not portable
+	YDM="$(date -d "-1 month" +%m)" # XXX not portable
+	(echo "${YDY}-${YDM}"; cat ${DAT_DIR}/${YDY}/particle.dat.${YDY}-${YDM}-* | $DAY_AVG) | paste - - >> $MA_OF
+	rm $FLAG_MO
+fi
+
+cd "${BASE_DIR}" || exit 1
+gnuplot "${BASE_DIR}/particle_specs.gnuplot"
+
+sync
+
+/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ # 2> /dev/null
+
+rm "${LOCK}"

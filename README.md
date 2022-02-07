@@ -57,3 +57,4 @@ data and described below.
 	* 2018-12-14: Got everything set back up on the balcony of an apt in Augsburg, Germany - a small town in Bavaria.
 	* 2019-03-31: Moved the Geiger counter to the bottom shelf of a plant thing on the balcony.
 	* 2020-09-21: Stacked the Geiger counter box on top of the solar power equipment box.
+	* 2021-10-13: Replaced the OG Raspberry Pi 1 + Breadboard setup that's been running all this time with a less temporary RPi Zero W + Adafruit Bonnet
