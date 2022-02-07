@@ -3,7 +3,7 @@ trigger hooked up to a Raspberry Pi GPIO pin.
 
 This code can be found in the following places:
 * https://github.com/mcthoren/particle_weather		<--code
-* https://wx5.slackology.net/plots/particles.html	<--page
+* https://wx5.slackology.net/particles.html		<--page
 * https://wx5.slackology.net/				<--code, page, plots, data
 
 Specs on the tube used in this project (LND 712) can be found here:
@@ -58,3 +58,4 @@ data and described below.
 	* 2019-03-31: Moved the Geiger counter to the bottom shelf of a plant thing on the balcony.
 	* 2020-09-21: Stacked the Geiger counter box on top of the solar power equipment box.
 	* 2021-10-13: Replaced the OG Raspberry Pi 1 + Breadboard setup that's been running all this time with a less temporary RPi Zero W + Adafruit Bonnet
+	* 2022-02-07: New particle wx v9 hardware and software merge/builtin to a new weather enclosure on the balcony
