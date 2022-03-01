@@ -26,6 +26,7 @@ PAT="^2([0-9]{13}) [0-9]*\.[0-9]* cpm$"
 # lock is also checked for and deleted on boot, in case of a crash
 touch "${LOCK}"
 
+HOST_N="$(hostname -s)"
 "${WT_DIR}/grab_48h" "${DAT_DIR}" particle.dat
 
 if [ -e $FLAG ]; then
@@ -50,6 +51,8 @@ gnuplot "${BASE_DIR}/particle_specs.gnuplot"
 
 sync
 
-/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ # 2> /dev/null
+[ "${HOST_N}" = "glow" ] && {
+	/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ # 2> /dev/null
+}
 
 rm "${LOCK}"
