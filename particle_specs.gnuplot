@@ -10,6 +10,7 @@ set xtics 7200 rotate by 30 offset -5.9, -2.2
 set mxtics
 set grid mxtics
 set grid
+set link y2
 set ylabel "nGy/h"
 set y2label "nGy/h"
 set term pngcairo size 2000, 512 font ",10"
