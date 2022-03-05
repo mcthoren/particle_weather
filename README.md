@@ -13,7 +13,10 @@ The following will help get one started:
 * apt install python3-rpi.gpio
 
 The German government also publishes measured radioactivity here:
-* https://odlinfo.bfs.de/DE/index.html
+* https://odlinfo.bfs.de/ODL/DE/themen/wo-stehen-die-sonden/karte/karte_node.html
+
+The Europeans allege to publish a map here:
+* https://remap.jrc.ec.europa.eu/Consent/Simple.aspx
 
 Notes:
 * To make the numbers on the particle graphs more meaningful to more people,
