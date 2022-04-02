@@ -55,4 +55,8 @@ sync
 	/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ # 2> /dev/null
 }
 
+[ "${HOST_N}" = "pepe" ] && {
+	/usr/bin/rsync -ur --timeout=58 --exclude .git "${BASE_DIR}/" wx0_sync:/wx0/dev/ # 2> /dev/null
+}
+
 rm "${LOCK}"
