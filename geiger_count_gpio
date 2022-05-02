@@ -23,7 +23,8 @@ def trigger_count(channel):
 
 	if(time2 > 60):
 		ts = time.strftime("%FT%TZ", time.gmtime())
-		dat_string = "%s\t%.2f cpm\n" % (ts, count/(60/time2))
+		dat_string = "%s\t%.2f cpm\tpi_temp: %.2f °C\n" %\
+			(ts, count/(60/time2), float(wx.pi_temp_read()) / 1000)
 		wx.write_out_dat_stamp_iso(ts, 'particle.dat', dat_string, wx_dir)
 		count = 0
 		time0 = time.time()
