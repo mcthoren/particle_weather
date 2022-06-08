@@ -56,7 +56,7 @@ sync
 }
 
 [ "${HOST_N}" = "pepe" ] && {
-	/usr/bin/rsync -ur --timeout=58 --exclude .git "${BASE_DIR}/" wx0_sync:/wx0/dev/ # 2> /dev/null
+	/usr/bin/rsync -ur --timeout=58 --exclude .git "${BASE_DIR}/" wx0_sync:/wx0/dev/ 2> /dev/null
 }
 
 rm "${LOCK}"
