@@ -52,7 +52,7 @@ gnuplot "${BASE_DIR}/particle_specs.gnuplot"
 sync
 
 [ "${HOST_N}" = "glow" ] && {
-	/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ # 2> /dev/null
+	/usr/bin/rsync -ur --timeout=50 --exclude='.git' "${BASE_DIR}/" wx5_sync:/wx5/ 2> /dev/null
 }
 
 [ "${HOST_N}" = "pepe" ] && {
