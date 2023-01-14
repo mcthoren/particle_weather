@@ -62,6 +62,8 @@ data and described below.
 	* 2020-09-21: Stacked the Geiger counter box on top of the solar power equipment box.
 	* 2021-10-13: Replaced the OG Raspberry Pi 1 + Breadboard setup that's been running all this time with a less temporary RPi Zero W + Adafruit Bonnet
 	* 2022-02-07: The new RPi Zero W + Adafruit Bonnet setup has been built into a new outdoor enclosure together with a few other instruments and two large lead acid batteries. The batteries are between the the Geiger counter and the wall of the building next to us. The stone wall appears to be more radioactive than the lead in the batteries, which are now effectively shielding us from the building. This is very clearly seen in the data.
+	* 2022-11-19: Everything got torn down again for another move. NO DATA until...
+	* 2022-12-17: Moved back to Berlin! Station back in a box on the balcony.
 
 Some of the example output looks sth like:
 ![This for the short term data](https://wx5.slackology.net/plots/particle_cpm_48.png)
