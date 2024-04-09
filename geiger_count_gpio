@@ -29,7 +29,14 @@ def trigger_count(channel):
 		count = 0
 		time0 = time.time()
 
-GPIO.add_event_detect(17, GPIO.FALLING, callback=trigger_count, bouncetime=20)
+try:
+	GPIO.add_event_detect(17, GPIO.FALLING, callback=trigger_count, bouncetime=20)
+except:
+	# as is so often the case, after one random upgrade this breaks with systemd starting it up, but runs normally otherwise.
+	# i'm guess something about the random order of brining up systems in the quest for faster boot times fucks it up.
+	# so if it fails wait for a bit and hope systemd brought up all the prereqs by then. fookin ell.
+	time.sleep(4)
+	GPIO.add_event_detect(17, GPIO.FALLING, callback=trigger_count, bouncetime=20)
 
 try:
 	while True:
