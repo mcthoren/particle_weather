@@ -15,8 +15,18 @@ The following will help get one started:
 The German government also publishes measured radioactivity here:
 * https://odlinfo.bfs.de/ODL/DE/themen/wo-stehen-die-sonden/karte/karte_node.html
 
-The Europeans allege to publish a map here:
+The Europeans publish a map here:
 * https://remap.jrc.ec.europa.eu/Consent/Simple.aspx
+
+The Austrians publish a map here:
+* https://sfws.lfrz.at/
+
+The Swiss publish a map here:
+* https://www.naz.ch/en/aktuell/tagesmittelwerte
+
+The Slovenians publish a map here:
+* https://www.radioaktivnost.si/rvo_public/RVO/Map
+
 
 Notes:
 * To make the numbers on the particle graphs more meaningful to more people,
