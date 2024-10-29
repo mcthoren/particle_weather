@@ -52,3 +52,14 @@ set timefmt "%Y-%m"
 set title "Radioactivity: Monthly averages."
 set output plot_d.'/particle_cpm_month_avg.png'
 plot mon_dat using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#00c0c0"
+
+set xrange ["2023-01":] noextend
+set title "Radioactivity: Monthly averages since last move."
+set output plot_d.'/particle_cpm_month_avg.slm.png'
+plot mon_dat using 1:(($2*1000/108)) title 'Monthly Average Dose Rates (nGy/h)' with boxes linecolor rgb "#00c0c0"
+
+set xrange ["2023-01-07":] noextend
+set title "Radioactivity: Daily averages since last move."
+set timefmt "%Y-%m-%dT%H:%M:%SZ"
+set output plot_d."/particle_cpm_da.slm.png"
+plot day_dat using 1:(($2*1000/108)) title 'Daily Average Dose Rates (nGy/h)' with boxes linecolor rgb "#00aa00"
