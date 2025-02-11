@@ -9,8 +9,11 @@ This code can be found in the following places:
 Specs on the tube used in this project (LND 712) can be found here:
 * https://www.lndinc.com/products/geiger-mueller-tubes/712/
 
-The following will help get one started:
+The following will help get one started on bullseye and earlier:
 * apt install python3-rpi.gpio
+
+and this should get things going on bookworm and later:
+* apt install python3-rpi-lgpio
 
 The German government also publishes measured radioactivity here:
 * https://odlinfo.bfs.de/ODL/DE/themen/wo-stehen-die-sonden/karte/karte_node.html
