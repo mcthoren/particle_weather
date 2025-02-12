@@ -1,0 +1,11 @@
+#!/bin/sh
+
+LOCK0='/home/ghz/repos/particle_weather/part_wx.lock'
+LOCK1='/home/ghz/repos/particle_weather/CRONFLAG'
+LOCK2='/home/ghz/repos/particle_weather/CRONFLAG_MO'
+
+test -e $LOCK0 && rm $LOCK0
+test -e $LOCK1 && rm $LOCK1
+test -e $LOCK2 && rm $LOCK2
+
+exit 0
