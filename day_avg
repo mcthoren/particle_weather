@@ -19,5 +19,7 @@ while (<>) {
 	}
 }
 
-my $avg = $tsum / $num;
-printf "%.2f\n", $avg;
+if ($num > 0) {
+	my $avg = $tsum / $num;
+	printf "%.2f\n", $avg;
+}
